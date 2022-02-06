@@ -1,0 +1,221 @@
+pendahulan
+apa itu oop?
+gaya programming style (paradigma pemprogaman)
+pemprogaman prosedural :
+1. baris intruksinya dilakukan langkah demi langkah
+2. memecah program menjadi bagian bagian kecil
+3. mungkin di prosedural programming pada bahasa pemprogaman lainnya
+4. disebut prosedur, subroutine atau function
+5. disebut juga linear atau programan dibaca dari atas ke bawah
+6. contoh gaya programming secara prosedural pada bahasa lainnya
+    adalah fortran, ALGOL, COBOL, Pascal, C, PHP, JavaScript
+
+Kelebihan prosedural programming
+1. to the point
+2. simplicity & kemudahan implementasi untuk dibaca oleh compiler & interpreter lainnya
+    (unutk compiler dan interpreter)
+3. Mudah ditelesuri langsung memunculkan pesan erro di barisnya jadi mudah dalam mencari pesan error yang ditampilkan
+4. Membutuhkan lebih sedikit memory (dibandingkan dengan OOP)
+
+
+Karakteristik OOP (Object Oriented Programming)
+Dengan menggunakan OOP kita bisa dapat : 
+1. Menyusun semua kode program dan struktur data sebagai objek
+2. Objek adalah unit dasar dari program (memiliki peranan penting di dalam program)
+3. Objek menyimpan data dan perilaku (kita cenderung tidak lagi membuat variable dan function, justru object object ini lah yang menyimpan data & perilaku dari program kita)
+4. Objek bisa saling berinteraksi (terhubung)
+Contoh bahasa lainnya yang menggunakan paradigma sebagai object : 
+Java, Ruby, Python, C++, JavaScript, PHP 5 >++
+
+Kelebihan OOP :
+1. Kita dapat lebih mudah merepresentasikan sesuatu yang ada di dunia nyata
+2. Enkapsulasi & Abstraksi pada data (Memungkinkan data yang kita buat itu aman dari sisi bagian lain program kita)
+3. Reusability (kita dapat dengan mudah menggunakan ulang program program yang sudah kita buat)
+4. Skalabilitas & Ekstensibilitas 
+5. Kemudahan pengelolaan
+6. Mudah untuk berkolaborasi
+7. Dapat digunakan oleh framework
+
+jadi, bagus mana antara prosedural & OOP ?
+sama sama ada kekurangan dan Kelebihannya masing masing tergantung kita ngodingnya sesuai dengan kebutuhan
+
+Konsep OOP pada PHP ?
+basic = class dan object
+      = Property dan Method
+      = Constructor
+      = Object type
+      = inhitance
+      = Visibility / Access Modifier
+      = Konsep setter & Getter
+      = Static Method
+
+Advanced = Abstract & Interface
+         = Interceptor
+         = Object cloning
+         = Callbacks & closures
+         = Namespaces & Autoloading
+
+class
+class adalah bluprint / template untuk membuat instance dari object
+class mendefinisikan objectnya
+bisa menyimpan data dan perilaku yang disebut dengan property dan Method
+
+membuat class
+class <nama class> {
+
+};
+
+<?php 
+    class Coba {
+        public $a; //property
+
+        //Method
+        public function b() {
+
+        }
+    }
+?>
+
+object
+object adalah sebuah instance yang didefinisikan oleh class
+banyak object dapat dibuat dengan menggunakan satu class
+object dibuat dapat dengan menggunakan keyword new
+
+<?php 
+    class Coba{
+
+    }
+    //membuat object instance dari class
+    $a = new Coba();
+    $b = new Coba();
+?>
+
+Property & Method
+
+Property adalah sesuatu yang merepresentasikan data / keadaan dari sebuah object
+atau variable yang ada di dalam object (member variable) sama seperti variable di dalam PHP, ditambah dengan Visibility di depannya
+
+Method adalah sesuatu yang merepresentasikan perilaku dari sebuah object
+function yang ada di dalam object
+sama seperti function di dalam PHP, ditambah dengan Visibility di depannya
+
+Constructor
+Constructor adalah suatu Method yang spesial atau method khusus yang ada di sebuah class
+karena Constructor ini adalah method yang otomatis dijalankan ketika sebuah class kita buat objectnya
+
+
+object type
+object type menggunakan object sebagai salah satu tipe data pada class
+
+Inheritance (Pewarisan)
+Inheritance adalah sebuah konsep yang menciptakan hubungan hierarki antar kelas (Parent & Chlid)
+Inheritance memungkinkan kita untuk mengghubungkan class clas tadi dengan konsep hierarki
+
+Child class mewarisi semua properti dan method dari Parentnya (Yang visible)
+Lalu Child class, ini memperluas (Extends) fungsionalitas dari Parentnya
+Mengembangkan Parent classnya
+
+Lalu mengapa Inheritance ? 
+
+Visibility (Access modifier)
+Visibility adalah sebuah konsep yang digunakan atau untuk mengatur akses dari 
+property dan method pada sebuah objek
+
+Ada 3 keyword Visibility yang digunakan : 
+1. public
+    Property dan method nya dapat digunakan dimana saja, bahkan diluar classnya
+
+2. Protected
+    Property dan method nya hanya bisa kita gunakan did dalam sebuah class beserta turunannya (inherit yang diturunkan oleh class Parentnya)
+
+3. Private
+    Property dan Methodnya hanya dapat digunakan di dalam sebuah class tertentu saja (sifatnya tertutup)
+
+Lalu kenapa kita perlu Access modifier ini ?
+1. Supaya kita hanya memperlihatkan aspek dari class yang dibutuhkan oleh 'client'
+2. Kita jadinya bisa menentukan kebutuhan yang jelas untuk sebuah object
+3. Kita juga bisa memberikan kendsli pada code kita untuk menghidari 'bug'
+
+Class merupakan template dari object
+Static keyword
+Kita bisa juga mengakses property dan method dalam konteks class
+Tanpa melakukan instasiansi
+
+keyword self::<nama property>;
+digunakan untuk mengakses property tanpa diinstasiansi
+
+lalu untuk apa Static keyword ?
+kita tahu bahwa member - member (property dan methodnya) itu terikat dengan class, bukan dengan object
+Nilai static akan selalu tetap meskipun object di instasiansi berulang kali
+
+Dengan menggunakan static keyword seolah olah kode kita menjadi procedral
+kita bisa langsung memanggil property dan method di classnya tanpa instasiansi
+biasanya digunakan unutk membuat fungsi bantuan / helper
+atau digunakan di class - class utility pada framework
+
+constant
+constant adalah sebuah identifier unutk menyimpan nilai tetap
+nilai yang disimpan tidak dapat berubah ketika kita sudah set dalam program
+ada 2 cara membuat constanta
+yaitu keyword define(NAMA, value); & const NAMA = value;
+keyword define dalam membuat contanta tidak bisa disimpan didalam class yang kita buat sedangkan keyword const bisa kita buat didalam classnya
+
+perbedaanya define() tidak bisa disimpan di dalam class sendangkan const bisa disimpan di dalam class
+
+Magic Constant = constanta yang telah dibuat did alam php nya
+__LINE__ = akan menampilkan dimana constant yang kita buat / ditulis
+__FILE__ = akan menampilkan file yang kita kerjakan 
+__DIR__ = menampilkan directory file kita
+__FUNCTION__ = menampilkan kita berada di dalam function apa
+__CLASS__ = menampilkan kita berada di class apa
+__TRAIT__
+__METHOD__
+__NAMESPACE__
+
+Abstract Class
+Apa itu Abstract class ?
+Sebuah class yang tidak dapat kita instasiansi / diinstasiansi
+terus bagaimana kita dapat instasiansi ?
+kita dapat instasiansi melalui class turunannya
+Mendefinisikan interface untuk class lain yang menjadi turunannya
+Berperan sebagai kerangka dasar unutk kelas turunannya
+didalam class Abstract ini minimal harus memliki 1 method Abstract (method ini yang kita pakai sebagai interface atau kerangka dari class abstract nya)
+abstract class sangat berkaitan dengan inhitance
+digunakan dalam 'pewarisan' / Inheritance untuk memaksakan implementasi method abstrak yang sama unutk semua kelas turunannya
+jadi did dalam class abstract kita mempunyai 1 method abstract yang hanya interface nya aja / nama nya aja nggak ada isinya dan isinya kita isikan di class turunannya dengan nama method yang sama
+
+semua kelas turunannya harus mengimplementasikan method abstrak yang ada di kelas abstraknya
+kelas abstract boleh memiliki property / method reguler
+kelas abstrak boleh memiliki property / static method
+
+kenapa mebggunakan kelas abstract ?
+merepresentasikan ide atau konsep dasar 
+composition over Inheritance
+salah satu cara menerapkan polimorphism
+sentralisasi logic
+mempermudah pengerjaan tim
+
+
+interface 
+merupakan kelas abstract yang sama sekali tidak memiliki implementasi
+Kelas yang murni merupakan template untuk kelas turunannya
+tidak boleh memiliki property hanya deklarasi method saja
+semua method harus dideklarasikan dengan visibility public 
+boleh mendeklarasikan __contruct()
+satu kelas boleh mengimplementasikan banyak interface
+dengan menggunakan type-hinting dapat melakukan 'dependecy injection'
+pada akhirnya akan mencapai polimorphism
+
+Autoloading
+proses pemanggilan class (file) tanpa harus menggunakan fungsi require secara otomatis
+yaitu dengan menggunnakan spl_autoload_register();
+
+Apa itu Namespaces ?
+Namespaces adalah sebuah cara untuk mengelompokkan program kita ke dalam sebuah package tersendiri
+
+teknik encapsulasi
+lalu kenapa kita kelompokkan ?
+alasannya adalah pada dasarnya PHP tidak mengizinkan kita untuk memiliki 2 class dengan nama yang sama
+
+Aturan penulisan namespace 
+namespace Vendor\Namespace\Subnamespace;
